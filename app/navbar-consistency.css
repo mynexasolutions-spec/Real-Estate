@@ -1,0 +1,92 @@
+/* Keep the shared desktop navbar identical to the homepage. */
+@media (min-width: 851px) {
+  body main.subpage { padding-top: 0 !important; }
+
+  body main.subpage > .navbar {
+    position: absolute !important;
+    z-index: 30 !important;
+    top: 14px !important;
+    right: 4% !important;
+    left: 4% !important;
+    bottom: auto !important;
+    width: auto !important;
+    min-height: 0 !important;
+    height: 89px !important;
+    padding: 0 35px !important;
+    border: 0 !important;
+    border-radius: 21px !important;
+    background: rgba(247, 250, 253, .94) !important;
+    box-shadow: 0 14px 35px rgba(7, 47, 42, .14) !important;
+    backdrop-filter: blur(14px) !important;
+  }
+
+  body main.subpage .navbar-logo-link {
+    width: 220px !important;
+    height: 68px !important;
+  }
+
+  body main.subpage .navbar-logo {
+    width: 212px !important;
+    height: 64px !important;
+    mix-blend-mode: multiply !important;
+  }
+
+  body main.subpage .nav-links {
+    gap: 34px !important;
+    margin: auto !important;
+  }
+
+  body main.subpage .nav-links a {
+    padding: 12px 0 !important;
+    font-size: 12px !important;
+  }
+
+  body main.subpage .nav-controls {
+    gap: 24px !important;
+  }
+
+  body main.subpage .nav-controls .nav-call {
+    display: inline-flex !important;
+    min-width: 182px !important;
+    height: 56px !important;
+    padding: 0 25px !important;
+    border: 0 !important;
+    border-radius: 14px !important;
+    background: #007d69 !important;
+    color: #fff !important;
+    font-size: 12px !important;
+    box-shadow: none !important;
+  }
+
+  body main.subpage .nav-controls .nav-call:hover {
+    background: #006b5a !important;
+    transform: translateY(-2px) !important;
+  }
+
+  body main.subpage .nav-controls .nav-whatsapp {
+    display: inline-flex !important;
+    min-width: 163px !important;
+    height: 56px !important;
+    margin: 0 !important;
+    padding: 0 24px !important;
+    justify-content: center !important;
+    border: 1px solid #e8bd66 !important;
+    border-radius: 14px !important;
+    background: #fffdfa !important;
+    color: #17453d !important;
+    font-size: 12px !important;
+    font-weight: 800 !important;
+    box-shadow: none !important;
+    transition: transform .2s ease, box-shadow .2s ease !important;
+  }
+
+  body main.subpage .nav-controls .nav-whatsapp:hover {
+    transform: translateY(-2px) !important;
+    box-shadow: 0 10px 20px rgba(23, 69, 61, .12) !important;
+  }
+
+  body main.subpage .nav-whatsapp .whatsapp-icon {
+    width: 22px !important;
+    height: 22px !important;
+  }
+}

@@ -1,5 +1,7 @@
 import type { Metadata } from "next";
 import "./globals.css";
+import "./subpages.css";
+import "./navbar-consistency.css";
 
 export const metadata: Metadata = {
   title: "Markanday Enterprises | Real Estate & Interiors",

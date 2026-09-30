@@ -2,6 +2,8 @@
 
 import Image from "next/image";
 import { useEffect, useRef, useState } from "react";
+import { SiteFooter } from "./components/site-footer";
+import { SiteHeader } from "./components/site-header";
 
 const highlights = [
   ["Dholpuri Tiles", "Rooms & hall flooring", "⌂", "tile-interior"],
@@ -40,7 +42,6 @@ const listings = [
 ] as const;
 
 export default function Home() {
-  const [menuOpen, setMenuOpen] = useState(false);
   const [videoVisible, setVideoVisible] = useState(false);
   const [videoMuted, setVideoMuted] = useState(true);
   const promoVideoRef = useRef<HTMLVideoElement>(null);
@@ -65,14 +66,7 @@ export default function Home() {
   }, []);
 
   return <main className="site-main">
-    <header className="navbar">
-      <a className="navbar-logo-link" href="#home" aria-label="Markanday Enterprises home"><Image src="/images/logo.png" alt="Markanday Enterprises" width={600} height={260} className="navbar-logo" priority /></a>
-      <nav className={menuOpen ? "nav-links is-open" : "nav-links"}>
-        <div className="mobile-menu-intro"><p>Markanday</p><span>Real Estate &amp; Interior Designer</span></div><div className="mobile-menu-search">Search properties <b>⌕</b></div>
-        <a href="#home" onClick={() => setMenuOpen(false)}>Home</a><a href="#highlights" onClick={() => setMenuOpen(false)}>Properties</a><a href="#services" onClick={() => setMenuOpen(false)}>Buy</a><a href="#services" onClick={() => setMenuOpen(false)}>Sell</a><a href="#contact" onClick={() => setMenuOpen(false)}>Rent</a><a href="#contact" onClick={() => setMenuOpen(false)}>Contact</a><a className="mobile-menu-youtube" href="https://youtube.com/@funnyvishwa3031?si=RJwQRXVmeGv3fQb9" target="_blank" rel="noreferrer">YouTube</a>
-      </nav>
-      <div className="nav-controls"><a className="call-now nav-call" href="tel:+918422943408"><Image src="/images/telephone.png" alt="" width={18} height={18} className="phone-icon" /> Call Now</a><a className="nav-whatsapp" href="https://wa.me/918422943408" target="_blank" rel="noreferrer" aria-label="Chat on WhatsApp"><Image src="/images/whatsapp.png" alt="" width={20} height={20} className="whatsapp-icon" /><span>WhatsApp</span></a><button className="menu-toggle" onClick={() => setMenuOpen(!menuOpen)} aria-label="Open navigation">{menuOpen ? "×" : "☰"}</button></div>
-    </header>
+    <SiteHeader />
     <section id="home" className="hero-wrap">
       <Image src="/images/hero-premium-v4.png" alt="Premium modern home" fill priority className="hero-image" sizes="100vw" />
       <div className="hero-wash" />
@@ -101,7 +95,7 @@ export default function Home() {
 
     <section id="services" className="featured-listings"><div className="listing-heading"><div><p className="eyebrow">FEATURED PROPERTIES</p><h2>Explore Our Latest Listings</h2><p>Premium locations, great connectivity and modern amenities.</p></div><a href="#contact">View All Properties <b>→</b></a></div><div className="listing-grid">{listings.map(([tag, type, title, location, price, imageClass]) => <article key={title} className="listing-card"><div className={`listing-image ${imageClass}`}><span className={tag === "For Rent" || tag === "For Resell" ? "tag red" : "tag"}>{tag}</span></div><div className="listing-content"><span className="listing-type">{type}</span><h3>{title}</h3><p>● &nbsp;{location}</p><b className="price">{price}</b><a href="#contact">Enquire Now <span>→</span></a></div></article>)}</div></section>
 
-    <footer className="site-footer"><div className="footer-main"><div className="footer-brand"><Image src="/images/logo.png" alt="Markanday Enterprises" width={600} height={260} className="footer-logo" /><p>Helping you find the right space for every chapter—buying, selling, rental and resale.</p><a href="https://youtube.com/@funnyvishwa3031?si=RJwQRXVmeGv3fQb9" target="_blank" rel="noreferrer">▶ &nbsp; Visit our YouTube channel</a></div><div><h3>Quick Links</h3><a href="#home">Home</a><a href="#highlights">Property Highlights</a><a href="#services">Featured Properties</a><a href="#contact">Contact Us</a></div><div><h3>Our Services</h3><a href="#services">Buy Property</a><a href="#services">Sell Property</a><a href="#services">Rental Properties</a><a href="#services">Resell Properties</a></div><div><h3>Get in Touch</h3><a href="tel:+918422943408">+91 84229 43408</a><a href="tel:+918108525502">+91 81085 25502</a><a href="tel:+918080843408">+91 80808 43408</a><a href="https://wa.me/918422943408" target="_blank" rel="noreferrer">WhatsApp us ↗</a></div></div><div className="footer-bottom"><span>© {new Date().getFullYear()} Markanday Enterprises. All rights reserved.</span><span>Real Estate & Interior Designer</span></div></footer>
+    <SiteFooter />
     <a className="floating-whatsapp" href="https://wa.me/918422943408" target="_blank" rel="noreferrer" aria-label="Chat on WhatsApp"><Image src="/images/whatsapp.png" alt="WhatsApp" width={29} height={29} className="whatsapp-icon" /></a>
   </main>;
 }
