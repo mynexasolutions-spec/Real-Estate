@@ -10,6 +10,10 @@ import "./youtube-footer.css";
 import "./video-tour.css";
 import "./video-tour-overrides.css";
 import "./desktop-type-scale.css";
+import "./mobile-trust-row.css";
+import "./mobile-highlight-type.css";
+import "./mobile-menu-logo.css";
+import "./desktop-card-type.css";
 
 export const metadata: Metadata = {
   title: "Markanday Enterprises | Real Estate & Interiors",

@@ -28,7 +28,7 @@ export function SiteHeader() {
         <Image src="/images/logo.png" alt="Markanday Enterprises" width={600} height={260} className="navbar-logo" priority />
       </Link>
       <nav className={menuOpen ? "nav-links is-open" : "nav-links"} aria-label="Primary navigation">
-        <div className="mobile-menu-intro"><p>Markanday</p><span>Real Estate &amp; Interior Designer</span></div>
+        <div className="mobile-menu-intro"><Image src="/images/logo.png" alt="Markanday Enterprises" width={220} height={96} className="mobile-menu-logo" /><span>Real Estate &amp; Interior Designer</span></div>
         <div className="mobile-menu-search">Explore properties <b>⌕</b></div>
         {navigation.map(([label, href]) => (
           <Link key={href} href={href} onClick={closeMenu} className={pathname === href ? "is-active" : undefined}>

@@ -36,7 +36,7 @@ const propertyServices = [
 
 const listings = [
   ["For Sale", "Flats", "2 BHK Flat", "Near Railway Station", "₹ 58 Lakhs", "listing-flat"],
-  ["For Rent", "Room", "Spacious Room", "Near Market", "₹ 6,500 / month", "listing-room"],
+  ["For Rent", "Room", "Spacious Room", "Near Market", "₹ 6,500", "listing-room"],
   ["For Sale", "Shop", "Commercial Shop", "Main Market Area", "₹ 1.20 Cr", "listing-shop"],
   ["For Resell", "Plot", "Residential Plot", "Prime Location", "₹ 35 Lakhs", "listing-plot"],
 ] as const;
@@ -85,7 +85,7 @@ export default function Home() {
         <p className="eyebrow">FIND YOUR PERFECT PROPERTY</p>
         <h1>Homes for a<br /><em>Better Tomorrow</em></h1>
         <p className="hero-description">Discover premium homes, modern interiors and the best investment opportunities — designed for a brighter future.</p>
-        <div className="trust-row"><span><b>⌖</b><strong>Best<br />Locations</strong><small>Prime &amp; Connected</small></span><span><b>♢</b><strong>Trusted<br />Deals</strong><small>Safe &amp; Transparent</small></span><span><b>▤</b><strong>Easy<br />Process</strong><small>Hassle-Free Experience</small></span></div>
+        <div className="trust-row"><span><b>⌖</b><strong>Best<br />Locations</strong></span><span><b>♢</b><strong>Trusted<br />Deals</strong></span><span><b>▤</b><strong>Easy<br />Process</strong></span></div>
         <div className="hero-actions"><a className="call-now hero-call" href="tel:+918422943408"><Image src="/images/telephone.png" alt="" width={21} height={21} className="phone-icon" /> Call Now</a><a className="whatsapp-action" href="https://wa.me/918422943408" target="_blank" rel="noreferrer"><Image src="/images/whatsapp.png" alt="" width={24} height={24} className="whatsapp-icon" /> Chat on WhatsApp</a></div>
         <p className="property-types"><a href="#services">Chawl</a><i /> <a href="#services">Room</a><i /> <a href="#services">Flats</a><i /> <a href="#services">Shops</a><i /> <a href="#services">Plots</a></p>
       </div>
