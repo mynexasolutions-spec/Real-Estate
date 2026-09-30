@@ -8,5 +8,5 @@ const listings = [
 ] as const;
 
 export default function SellPage() {
-  return <PropertyCatalogPage eyebrow="SELL SMARTER" title="Your property deserves the" accent="right attention." description="We pair clear advice with considered presentation so you can move toward your next chapter with confidence." heroImage="/images/properties/4.jpeg" primaryAction="Request a consultation" primaryHref="/contact" listings={listings} steps={["Start with an honest conversation about your property.", "Create a clear plan for presentation and buyer reach.", "Receive steady support through every decision."]} />;
+  return <PropertyCatalogPage eyebrow="SELL SMARTER" title="Your property deserves the" accent="right attention." description="We pair clear advice with considered presentation so you can move toward your next chapter with confidence." heroImage="/images/properties/4.jpeg" primaryAction="Request a consultation" primaryHref="/contact" listings={listings} steps={["Start with an honest conversation about your property.", "Create a clear plan for presentation and buyer reach.", "Receive steady support through every decision."]} variant="sell" />;
 }

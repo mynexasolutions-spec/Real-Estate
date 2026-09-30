@@ -8,5 +8,5 @@ const listings = [
 ] as const;
 
 export default function RentPage() {
-  return <PropertyCatalogPage eyebrow="RENT WITH EASE" title="The right rental, without the" accent="runaround." description="Tell us what will make daily life work better, and we&apos;ll help you find a space that feels right from day one." heroImage="/images/properties/3.jpeg" primaryAction="Find a rental" primaryHref="/contact" listings={listings} steps={["Share your preferred area, budget and move-in timing.", "Explore rentals matched to your practical needs.", "Settle in with clarity on the next steps."]} />;
+  return <PropertyCatalogPage eyebrow="RENT WITH EASE" title="The right rental, without the" accent="runaround." description="Tell us what will make daily life work better, and we&apos;ll help you find a space that feels right from day one." heroImage="/images/properties/3.jpeg" primaryAction="Find a rental" primaryHref="/contact" listings={listings} steps={["Share your preferred area, budget and move-in timing.", "Explore rentals matched to your practical needs.", "Settle in with clarity on the next steps."]} variant="rent" />;
 }

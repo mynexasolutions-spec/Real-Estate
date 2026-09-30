@@ -8,5 +8,5 @@ const listings = [
 ] as const;
 
 export default function PropertiesPage() {
-  return <PropertyCatalogPage eyebrow="PROPERTY COLLECTION" title="Find a place that feels" accent="like yours." description="A carefully considered selection of homes and investment opportunities, brought together by a local team you can trust." heroImage="/images/properties/1.jpeg" primaryAction="Explore with us" primaryHref="/contact" listings={listings} steps={["Share the kind of property and location you have in mind.", "Explore options chosen around your priorities.", "Move forward with clear, responsive support."]} />;
+  return <PropertyCatalogPage eyebrow="PROPERTY COLLECTION" title="Find a place that feels" accent="like yours." description="A carefully considered selection of homes and investment opportunities, brought together by a local team you can trust." heroImage="/images/properties/1.jpeg" primaryAction="Explore with us" primaryHref="/contact" listings={listings} steps={["Share the kind of property and location you have in mind.", "Explore options chosen around your priorities.", "Move forward with clear, responsive support."]} variant="properties" />;
 }

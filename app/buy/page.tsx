@@ -8,5 +8,5 @@ const listings = [
 ] as const;
 
 export default function BuyPage() {
-  return <PropertyCatalogPage eyebrow="BUY WITH CONFIDENCE" title="A better start to your" accent="home search." description="From your first shortlist to the final decision, we help you focus on the properties that genuinely fit." heroImage="/images/properties/2.jpeg" primaryAction="Talk to a property expert" primaryHref="/contact" listings={listings} steps={["Tell us your budget, area and must-haves.", "Receive a focused shortlist, not a flood of options.", "Visit, compare and decide with trusted guidance."]} />;
+  return <PropertyCatalogPage eyebrow="BUY WITH CONFIDENCE" title="A better start to your" accent="home search." description="From your first shortlist to the final decision, we help you focus on the properties that genuinely fit." heroImage="/images/properties/2.jpeg" primaryAction="Talk to a property expert" primaryHref="/contact" listings={listings} steps={["Tell us your budget, area and must-haves.", "Receive a focused shortlist, not a flood of options.", "Visit, compare and decide with trusted guidance."]} variant="buy" />;
 }
