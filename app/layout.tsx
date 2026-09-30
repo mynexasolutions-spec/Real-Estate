@@ -4,6 +4,12 @@ import "./subpages.css";
 import "./contact-page.css";
 import "./catalog-variants.css";
 import "./rent-card-fix.css";
+import "./instagram-links.css";
+import "./email-links.css";
+import "./youtube-footer.css";
+import "./video-tour.css";
+import "./video-tour-overrides.css";
+import "./desktop-type-scale.css";
 
 export const metadata: Metadata = {
   title: "Markanday Enterprises | Real Estate & Interiors",

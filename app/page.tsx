@@ -44,6 +44,7 @@ const listings = [
 export default function Home() {
   const [videoVisible, setVideoVisible] = useState(false);
   const [videoMuted, setVideoMuted] = useState(true);
+  const [videoPlaying, setVideoPlaying] = useState(true);
   const promoVideoRef = useRef<HTMLVideoElement>(null);
   const promoSectionRef = useRef<HTMLElement>(null);
   function toggleVideoSound() {
@@ -51,6 +52,16 @@ export default function Home() {
     if (!video) return;
     video.muted = !video.muted;
     setVideoMuted(video.muted);
+  }
+  function toggleVideoPlayback() {
+    const video = promoVideoRef.current;
+    if (!video) return;
+    if (video.paused) {
+      void video.play().then(() => setVideoPlaying(true));
+      return;
+    }
+    video.pause();
+    setVideoPlaying(false);
   }
   useEffect(() => {
     const section = promoSectionRef.current;
@@ -81,7 +92,7 @@ export default function Home() {
     </section>
 
     <section ref={promoSectionRef} className={`promo-video-section${videoVisible ? " is-visible" : ""}`} aria-labelledby="promo-video-title">
-      <div className="promo-video-inner"><div className="promo-video-heading"><p className="eyebrow">A CLOSER LOOK</p><h2 id="promo-video-title">Experience the <em>Markanday Difference</em></h2><p>Discover thoughtfully designed spaces, premium finishes, and a lifestyle built around comfort.</p></div><div className="promo-video-frame"><video ref={promoVideoRef} className="promo-video" autoPlay muted loop playsInline preload="metadata" onVolumeChange={(event) => setVideoMuted(event.currentTarget.muted)}><source src="/images/video.mp4" type="video/mp4" />Your browser does not support this video.</video><div className="promo-video-shade" /><div className="promo-video-caption"><span>MARKANDAY ENTERPRISES</span><small>Spaces made for your next chapter</small></div><div className="promo-video-controls"><button type="button" onClick={toggleVideoSound} aria-label={videoMuted ? "Turn sound on" : "Mute promotional video"}><Image src={videoMuted ? "/images/unmute.png" : "/images/mute.png"} alt="" width={21} height={21} className="video-sound-icon" /></button></div></div></div>
+      <div className="promo-video-inner"><div className="promo-video-heading"><p className="eyebrow">VIDEO TOUR</p><h2 id="promo-video-title">Explore Spaces<br />Built for a <em>Better Tomorrow</em></h2><p>Take a closer look at our thoughtfully designed homes, modern amenities and superior construction through this video tour.</p><button className="promo-watch-button" type="button" onClick={toggleVideoPlayback}><span>{videoPlaying ? "Ⅱ" : "▶"}</span>{videoPlaying ? "Pause Video Tour" : "Watch Full Video Tour"}</button><div className="promo-benefits"><span><b>⌂</b>Modern<br />Living Spaces</span><span><b>◆</b>Quality<br />Construction</span><span><b>✦</b>Prime<br />Locations</span></div></div><div className="promo-video-frame"><video ref={promoVideoRef} className="promo-video" autoPlay muted loop playsInline controls preload="metadata" onPlay={() => setVideoPlaying(true)} onPause={() => setVideoPlaying(false)} onVolumeChange={(event) => setVideoMuted(event.currentTarget.muted)}><source src="/images/video.mp4" type="video/mp4" />Your browser does not support this video.</video><div className="promo-video-shade" /><button className="promo-play-toggle" type="button" onClick={toggleVideoPlayback} aria-label={videoPlaying ? "Pause video" : "Play video"}>{videoPlaying ? "Ⅱ" : "▶"}</button><div className="promo-video-caption"><span>MARKANDAY ENTERPRISES</span><small>Spaces made for your next chapter</small></div><div className="promo-video-controls"><button type="button" onClick={toggleVideoSound} aria-label={videoMuted ? "Turn sound on" : "Mute promotional video"}><Image src={videoMuted ? "/images/unmute.png" : "/images/mute.png"} alt="" width={21} height={21} className="video-sound-icon" /></button></div></div></div>
     </section>
 
     <section id="highlights" className="highlights">
