@@ -14,6 +14,9 @@ import "./mobile-trust-row.css";
 import "./mobile-highlight-type.css";
 import "./mobile-menu-logo.css";
 import "./desktop-card-type.css";
+import "./properties-page-type.css";
+import "./buy-page-type.css";
+import "./service-page-type.css";
 
 export const metadata: Metadata = {
   title: "Markanday Enterprises | Real Estate & Interiors",
