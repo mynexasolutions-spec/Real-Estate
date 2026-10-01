@@ -6,16 +6,23 @@ import { SiteFooter } from "./components/site-footer";
 import { SiteHeader } from "./components/site-header";
 
 const highlights = [
-  ["Dholpuri Tiles", "Rooms & hall flooring", "⌂", "tile-interior"],
-  ["Hall with Half Tiles", "Refined wall finish", "▦", "tile-interior"],
-  ["POP Ceiling", "Fan & light included", "✣", "tile-interior ceiling"],
-  ["Powder Coating", "Windows with grill", "▤", "tile-utility window"],
-  ["Full Tiled Bathroom", "Clean modern finish", "♨", "tile-utility bathroom"],
-  ["Green Marble Kadapa", "Kitchen platform", "▰", "tile-utility marble"],
-  ["1000 Litre Tank", "With pot mala", "▣", "tile-home tank"],
-  ["Concealed Wiring", "Electrical & piping", "⌁", "tile-utility piping"],
-  ["Separate Light Meter", "With tax pavti", "▤", "tile-home meter"],
-  ["24 Hours Water", "Reliable water supply", "●", "tile-home water"],
+  ["Outside Dholpuri Tiles", "Durable exterior tile finish", "⌂", "tile-interior"],
+  ["Hall Half Tiles", "Half-tile finish in the hall", "▦", "tile-interior"],
+  ["POP Ceiling", "With fan and light provision", "✣", "tile-interior ceiling"],
+  ["Powder-Coated Windows", "Windows fitted with grills", "▤", "tile-utility window"],
+  ["Full-Tiled Bathrooms", "Tiles in toilets and bathrooms", "♨", "tile-utility bathroom"],
+  ["Green Marble Kadapa", "Green marble kitchen platform", "▰", "tile-utility marble"],
+  ["1000-Litre Water Tank", "Provided with pot mala", "▣", "tile-home tank"],
+  ["Concealed Wiring & Piping", "Neat electrical and plumbing work", "⌁", "tile-utility piping"],
+  ["Separate Light Meter", "Provided with tax pavti", "▤", "tile-home meter"],
+  ["24-Hour Water Supply", "Reliable water availability", "●", "tile-home water"],
+] as const;
+
+const primeLocationBenefits = ["Near Anmol Garden", "Hospital nearby", "School nearby", "Metro Mall nearby"] as const;
+
+const apartmentConfigurations = [
+  { type: "1 BHK", options: [["421 sq. ft.", "₹42 lakh"], ["441 sq. ft.", "₹44 lakh"], ["461 sq. ft.", "₹46 lakh"]] },
+  { type: "2 BHK", options: [["589 sq. ft.", "₹60 lakh"], ["628 sq. ft.", "₹65 lakh"]] },
 ] as const;
 
 const nearbyLocations = [
@@ -96,8 +103,13 @@ export default function Home() {
     </section>
 
     <section id="highlights" className="highlights">
-      <div className="highlight-heading"><p className="eyebrow">PROPERTY HIGHLIGHTS</p><h2>Quality Construction with <em>Modern Facilities</em></h2><p>Well-designed spaces with all essential amenities for a comfortable lifestyle.</p></div>
+      <div className="highlight-heading"><p className="eyebrow">PROPERTY SPECIFICATIONS</p><h2>Quality Finishes with <em>Essential Facilities</em></h2><p>Thoughtfully included construction details and everyday amenities for comfortable living.</p></div>
       <div className="highlight-grid">{highlights.map(([title, copy, icon, imageClass]) => <article key={title} className="highlight-card"><div className={`highlight-image ${imageClass}`}><span>{icon}</span></div><div className="highlight-copy"><b>{title}</b><span>{copy}</span></div></article>)}</div>
+    </section>
+
+    <section id="prime-location" className="prime-location-offer" aria-labelledby="prime-location-title">
+      <div className="prime-location-intro"><p className="eyebrow">FEATURED APARTMENTS · KALYAN EAST</p><h2 id="prime-location-title">Find your next home in <em>Kalyan East.</em></h2><p>Well-connected apartments on Malangad Road, thoughtfully positioned for everyday convenience and a comfortable commute.</p><ul className="prime-location-benefits">{primeLocationBenefits.map((benefit) => <li key={benefit}>{benefit}</li>)}</ul><div className="prime-location-contact"><span>Speak with Trupti Ma&apos;am for availability</span><b>809793433</b><a href="tel:+918108525502">Call +91 81085 25502</a></div></div>
+      <div className="prime-location-pricing"><div className="prime-location-pricing-heading"><span>Available configurations</span><small>All prices are inclusive</small></div><div className="prime-location-price-grid">{apartmentConfigurations.map(({ type, options }) => <article className="prime-location-price-card" key={type}><header><b>{type}</b><span>Carpet-area options</span></header><ul>{options.map(([area, price]) => <li key={area}><b>{area}</b><strong>{price}</strong><small>All inclusive</small></li>)}</ul></article>)}</div></div>
     </section>
 
     <section className="location-advantage"><div className="location-top"><div><h2>Prime Location Advantage</h2><p>Everything you need is just a short walk away.</p></div><div className="walking-note"><b>♟</b><span>Railway Station, School, College,<br />Hospital, Bank and Market<br /><em>Walking Distance</em></span></div></div><div className="nearby-grid">{nearbyLocations.map(([title, imageClass]) => <article key={title}><div className={imageClass} /><p>{title}</p></article>)}</div></section>
